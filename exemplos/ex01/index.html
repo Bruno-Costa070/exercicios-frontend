@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float vs Flex vs Grid</title>
+    <style>
+    /* Regras para float */
+        .flutua{
+            margin: 4rem 4rem 7rem 4rem;
+        }
+        .flutua main{
+            background-color: #867d2a;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .flutua section:first-of-type{
+            float: left;
+            background-color: #D6D989;
+            padding: 1rem;
+            width: calc(33.333% - 2rem);
+        }
+        .flutua section:last-of-type{
+            float: left;
+            background-color: #d1bf82;
+            padding: 1rem;
+            width: calc(66.667% - 2rem);;
+        }
+/* Regras para flex */
+        .flex{
+            display: flex;
+            margin: 4rem;
+            flex-wrap: wrap;
+        }
+        .flex main{
+            background-color: #277ccc;
+            color: white;
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+        .flex section:first-of-type{
+            width: calc(33.333% - 2rem);
+            padding: 1rem;
+            background-color: #8dd2e6;
+        }
+        .flex section:last-of-type{
+            width: calc(66.667% - 2rem);
+            padding: 1rem;
+            background-color: #66aedd;
+        }
+/* Regras para grid */
+        .grade{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin: 4rem;
+            grid-template-areas: 
+            "a a a"
+            "b c c";
+        }
+        .grade main{
+            background-color: #0b9907;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            grid-area: a;
+        }
+        .grade section:first-of-type{
+            grid-area: b;
+            padding: 1rem;
+            background-color: #b3db98;
+        }
+        .grade section:last-of-type{
+            grid-area: c;
+            padding: 1rem;
+            background-color: #a3c58f;
+        }
+    </style>
+</head>
+<body>
+    <div class="flutua">
+        <main> Float </main>
+        <section> Texto para float</section>
+        <section> Texto para float <br> Texto para quebrar</section>
+    </div>
+    <div class="flex">
+        <main> Flexbox </main>
+        <section> Texto para flexbox</section>
+        <section> Texto para flexbox <br> Texto para quebrar</section>
+    </div>
+    <div class="grade">
+        <main> Grid </main>
+        <section> Texto para grid</section>
+        <section> Texto para grid <br> Texto para quebrar</section>
+    </div>
+</body>
+</html>

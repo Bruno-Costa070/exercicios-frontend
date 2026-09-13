@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Média</title>
+</head>
+<body>
+    <input type="number" id="nota">
+    <button id="adicionar">Adicionar Nota</button>
+    <p id="resultado"></p>
+</body>
+<script>
+    const notas = [];
+    const nota = document.getElementById("nota");
+    const adicionar = document.getElementById("adicionar");
+    const resultado = document.getElementById("resultado");
+
+    adicionar.addEventListener('click',() => {
+        const valor_da_nota = Number(nota.value);
+
+    if (valor_da_nota <= 10 && valor_da_nota >= 0) {
+        notas.push(valor_da_nota);
+        const media = calcularmedia(notas);
+        resultado.innerText = "Média: " + media;
+    }
+    else{
+        alert("Digite um valor entre 0 e 10!");
+    }
+    nota.value = ""
+    });
+
+    const calcularmedia = (lista_de_notas) => {
+        const soma = lista_de_notas.reduce((somador, nota_atual) => somador + nota_atual, 0);
+        return soma/ lista_de_notas.length;
+        }
+</script>
+</html>

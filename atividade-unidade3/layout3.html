@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout em Float</title>
+    <style>
+        .container{
+            height: 500px;
+            width: 500px;
+            border: 2px solid black;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .topo{
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .topo_esquerdo{
+            float: left;
+            margin-left: 5px;
+            height: 110px;
+            width: 310px;
+            background-color:#099e42;
+            color: aliceblue;
+            text-align: center;
+        }
+        .topo_direito{
+            float: right;
+            margin-right: 5px;
+            height: 110px;
+            width: 145px;
+            background-color: #099e42;
+            color: aliceblue;
+            text-align: center;
+
+        }
+        .corpo{
+            overflow: hidden;
+        }
+        .corpo_esquerdo{
+            float: left;
+            margin-left: 5px;
+            height: 350px;
+            width: 310px;
+            background-color: #b40d0d;
+            color: aliceblue;
+            text-align: center;
+        }
+        .corpo_direito{
+            float: right;
+            margin-right: 5px;
+            height: 350px;
+            width: 145px;
+            background-color: #b40d0d;
+            color: aliceblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topo">
+            <div class="topo_esquerdo">Topo Equerdo</div>
+            <div class="topo_direito">Topo Direito</div>
+        </div>
+        <div class="corpo">
+            <div class="corpo_esquerdo">Corpo Esquerdo</div>
+            <div class="corpo_direito">Corpo Direito</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        #areaIn {
+            width: 400px;
+            height: 30rem;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+        <p>
+            <label for="texto">Conteúdo</label><br>
+            <textarea id="textoIn" cols="50" rows="7"></textarea>
+        </p>
+        <p>
+            <label for="elemento">Elemento</label>
+            <select id="tag">
+                <option value="h1">h1</option>
+                <option value="h2">h2</option>
+                <option value="hr">hr</option>
+                <option value="p">p</option>
+                <option value="bx">box</option>
+                <option value="bl">bola</option>
+            </select>
+            <!-- O onclick chama as funções JS quando você clica nos botões -->
+            <button type="submit" onclick="inserirElemento(); return false">Criar</button>
+            <button type="submit" onclick="exec(); return false">Executar</button>
+        </p>
+
+        <section id="areaIn"></section>
+    </form>
+
+    <script>
+        // 1. Função chamada pelo botão "Executar"
+        function exec() {
+            var entrada = document.getElementById("textoIn").value;
+            alert(contar(entrada));
+        }
+
+        // 2. Função que conta quantos caracteres o texto possui
+        function contar(texto) {
+            let cont = 0;
+            let i = 0;
+            if (texto === "") {
+                alert("Insira um texto");
+            } else {
+                while (texto[i] !== undefined) {
+                    cont++;
+                    i++;
+                }
+            }
+            return cont;
+        }
+
+        // 3. Função (arrumada) chamada pelo botão "Criar"
+        function inserirElemento() {
+            var entrada = document.getElementById("textoIn").value;
+            var tipo = document.getElementById("tag").value;
+            var area = document.getElementById("areaIn");
+
+            if (tipo === "h1") {
+                area.innerHTML += "<h1>" + entrada + "</h1>";
+            }
+            if (tipo === "h2") {
+                area.innerHTML += "<h2>" + entrada + "</h2>";
+            }
+            if (tipo === "hr") {
+                area.innerHTML += "<hr style='width: 80%;'>";
+            }
+            if (tipo === "p") {
+                area.innerHTML += "<p>" + entrada + "</p>";
+            }
+            if (tipo === "bx") {
+                area.innerHTML += "<div style='width: 80%; box-shadow: 3px 2px 3px #000000f0;'>" + entrada + "</div>";
+            }
+            if (tipo === "bl") {
+                area.innerHTML += "<div style='width:100px; height:100px; border-radius: 50px; background-color: #89F;'>&nbsp;</div>";
+            }
+        }
+    </script>
+</body>
+</html>

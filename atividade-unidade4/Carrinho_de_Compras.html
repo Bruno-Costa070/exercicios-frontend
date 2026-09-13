@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+</head>
+<body>
+    <input type="number" id="preço">
+    <button id="adicionar">Adicionar</button>
+    <p id="total"></p>
+</body>
+<script>
+    const carrinho = [];
+    const preço = document.getElementById("preço");
+    const adicionar = document.getElementById("adicionar");
+    const total = document.getElementById("total");
+
+    adicionar.addEventListener('click',() => {
+        const preço_atual = Number(preço.value);
+        if (preço_atual > 0){
+            carrinho.push(preço_atual);
+            const preço_final = soma_dos_itens(carrinho);
+            total.innerText = "Total:" + preço_final;
+        }
+        else{
+            alert("Esse valor é Inválido")
+        }
+    preço.value = ""
+    })
+
+    const soma_dos_itens = (lista_de_preços) => {
+        const soma = lista_de_preços.reduce((total, proximo_item) => total + proximo_item, 0);
+        return soma
+    }
+</script>
+</html>

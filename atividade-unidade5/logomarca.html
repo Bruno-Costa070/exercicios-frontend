@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logomarca e Cartão de Perfil</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Cartão de Perfil</h1>
+            <p><strong>Nome:</strong> Bruno Costa dos Santos</p>
+            <p><strong>Disciplina:</strong> Desenvolvimento Front-end</p>
+        </header>
+
+        <section>
+            <h2>Logomarca</h2>
+            <canvas id="logo" width="400" height="400"></canvas>
+            <div>
+            <button class="botao1">Contato</button>
+            <button class="botao2">Projetos</button>
+        </div>
+        </section>
+
+        <footer>
+            <p>Bruno Costa dos Santos</p>
+            <p>&copy; 2026 Todos os Direitos Reservados</p>
+        </footer>
+    </main>
+
+    <script>
+        const canvas = document.getElementById("logo");
+        const marca = canvas.getContext("2d");
+
+        marca.beginPath();
+        marca.moveTo(200, 40);
+        marca.lineTo(300, 200);
+        marca.lineTo(200, 360);
+        marca.lineTo(100, 200);
+        marca.closePath();
+        marca.fillStyle = "#FFD700";
+        marca.fill();
+
+        marca.beginPath();
+        marca.moveTo(200, 70);
+        marca.lineTo(280, 200);
+        marca.lineTo(200, 330);
+        marca.lineTo(120, 200);
+        marca.closePath();
+        marca.fillStyle = "#0595ce";
+        marca.fill();
+    </script>
+</body>
+</html>

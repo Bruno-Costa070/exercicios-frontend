@@ -1,0 +1,28 @@
+.botao-base{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao1{
+    @extend .botao-base;
+    background-color: $cor1;
+    color: $cor3;
+
+    &:hover{
+        opacity: 0.8;
+    }
+}
+
+.botao2{
+    @extend .botao-base;
+    background-color: $cor2;
+    color: $cor0;
+
+    &:hover{
+        opacity: 0.8;
+    }
+}

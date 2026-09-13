@@ -1,0 +1,11 @@
+@mixin espacamento($bkg, $margin, $padding){
+    background: $bkg;
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin estilo-texto($cor, $fonte, $tamanhoFonte){
+    color: $cor;
+    font-family: $fonte;
+    font-size: $tamanhoFonte;
+}

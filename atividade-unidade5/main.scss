@@ -1,0 +1,31 @@
+@import 'variaveis';
+@import 'mixins';
+@import 'botoes';
+
+body{
+    @include espacamento($cor0, 0, 0);
+}
+
+header{
+   @include espacamento($cor2, 0, 15px);
+   text-align: center;
+}
+
+h1{
+    @include estilo-texto($cor1, Monospace, 35px);
+}
+
+section{
+    @include estilo-texto($cor1, Monospace, 20px);
+    @include espacamento($cor3, 0, 15px);
+    text-align: center;
+}
+
+p{
+    @include estilo-texto($cor0, Monospace, 20px);
+}
+
+footer{
+    @include espacamento($cor2, 0, 39px);
+    text-align: center;
+}

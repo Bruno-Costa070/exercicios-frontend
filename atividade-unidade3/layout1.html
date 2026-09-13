@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout em Flexbox</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .topo{
+            height: 120px;
+            background-color: #2124ee;
+            margin-bottom: 15px;
+            color: aliceblue;
+            text-align: center;
+        
+        }
+        .container2{
+            gap: 15px;
+            display: flex;
+            color: aliceblue;
+        }
+        .colunas{
+            flex: 1;
+            height: 345px;
+            background-color: #219cee;
+            color: aliceblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topo">Topo</div>
+        <div class="container2">
+            <div class="colunas"> Coluna da Esquerda</div>
+            <div class="colunas"> Coluna do Centro</div>
+            <div class="colunas"> Coluna da Direita</div>
+        </div>
+    </div>
+</body>
+</html>
