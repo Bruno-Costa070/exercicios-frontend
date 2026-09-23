@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade: Cookies</title>
+    <style>
+    html{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    body{
+        height: 100%;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #bcf8e4;
+    }
+
+    #titulo{
+        color: #fca131;
+    }
+
+    #nomeUsuario{
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 20px;
+        border: 2px solid black;
+        border-radius: 8px;
+    }
+
+    #botao{
+        width: 150px;
+        padding: 5px 10px;
+        font-size: 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+        background-color: #fca131;
+    }
+
+    </style>
+</head>
+<body>
+
+    <h1 id="titulo">Formulário com Cookies</h1>
+
+    <input type="text" id="nomeUsuario" placeholder="Digite seu nome">
+
+    <button id="botao" onclick="criarCookie()">Salvar</button>
+
+    <div id="resultado"></div>
+
+
+    <script>
+        function setCookie(nome, valor, dias) {
+        var data = new Date();
+        data.setTime(data.getTime() + (dias * 24 * 60 * 60 * 1000));
+        var validade = "expires=" + data.toUTCString();
+        document.cookie = nome + "=" + valor + ";" + validade + "; path=/;";
+    }
+
+    function getCookie(cnome) {
+        var nome = cnome + "=";
+        var dcCookie = decodeURIComponent(document.cookie);
+        var ca = dcCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(nome) == 0) {
+                return c.substring(nome.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function criarCookie(){
+        var textoDigitado = document.getElementById("nomeUsuario").value;
+        setCookie("usuario", textoDigitado, 5);
+        var cookieSalvo = getCookie("usuario");
+        document.getElementById("resultado").innerHTML = "Cookie salvo: " + cookieSalvo;
+    }
+    </script>
+</body>
+</html>
